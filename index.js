@@ -12,7 +12,7 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 const searcher = new YTSearcher({
-    key: "AIzaSyBnncUGsJgvw1_m9iqgm0SWACKYXMW6fEs",
+    key: process.env.youtube_api,
     revealed: true
 });
 
@@ -195,4 +195,4 @@ client.on('message', async message => {
 })
 
 
-client.login("NzY3MjQwMDk4OTY5NTUwODg4.X4vCBg.o5yfbMCnZ9-dEwyp0ang1eyHYjE");
+client.login(process.env.token);
