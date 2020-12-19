@@ -19,6 +19,8 @@ const searcher = new YTSearcher({
 const prefix = '!';
 const queue = new Map();
 
+const token = process.env.token;
+
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
@@ -195,4 +197,4 @@ client.on('message', async message => {
 })
 
 
-client.login(process.env.token);
+client.login(token);
